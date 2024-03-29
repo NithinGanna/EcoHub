@@ -174,4 +174,13 @@ router.get("/profile", userMiddleware, async(req,res)=>{
     return res.json(user);
 })
 
+router.post("/logout", (req, res) => {
+    // Clear the token or session
+    res.clearCookie("token");
+    // Optionally, perform any other cleanup tasks
+    // For example, clear any user-related data stored in session
+    res.status(200).json({ msg: "Logout successful" });
+});
+
+
 module.exports = router;

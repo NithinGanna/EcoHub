@@ -1,3 +1,5 @@
+import { NavBarPreLogin } from "../Components/NavBarPreLogin";
+
 const people = [
     {
         name: 'A Sai Bharath',
@@ -45,85 +47,77 @@ const people = [
 function About() {
     return (
         <>
-            <section className="mx-auto w-full max-w-7xl px-4 py-4">
-                <div className="flex flex-col space-y-4 md:flex-row md:items-center md:justify-between md:space-y-0">
-                    <div>
-                        <h2 className="text-lg font-semibold">Team</h2>
-                        <p className="mt-1 text-sm text-gray-700">
-                            This is a list of members who have participated in the hackathon as a team.
-                        </p>
-                    </div>
-                    <div></div>
-                </div>
-                <div className="mt-6 flex flex-col">
-                    <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-                        <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-                            <div className="overflow-hidden border border-gray-200 md:rounded-lg">
-                                <table className="min-w-full divide-y divide-gray-200">
-                                    <thead className="bg-gray-50">
-                                        <tr>
-                                            <th
-                                                scope="col"
-                                                className="px-4 py-3.5 text-left text-sm font-normal text-gray-700"
-                                            >
-                                                <span>Participants</span>
-                                            </th>
-                                            <th
-                                                scope="col"
-                                                className="px-8 py-3.5 text-left text-sm font-normal text-gray-700"
-                                            >
-                                                Title
-                                            </th>
-                                            <th
-                                                scope="col"
-                                                className="px-8 py-3.5 text-left text-sm font-normal text-gray-700">
-                                                Department
-                                            </th>
-                                            <th
-                                                scope="col"
-                                                className="px-4 py-3.5 text-left text-sm font-normal text-gray-700">
-                                                College
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody className="divide-y divide-gray-200 bg-white">
-                                        {people.map((person) => (
-                                            <tr key={person.name}>
-                                                <td className="whitespace-nowrap px-4 py-4">
-                                                    <div className="flex items-center">
-                                                        <div className="ml-4">
-                                                            <div className="text-sm font-medium text-gray-900">
-                                                                {person.name}
-                                                            </div>
-                                                            <div className="text-sm text-gray-700">
-                                                                {person.email}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td className="whitespace-nowrap px-8 py-4">
-                                                    <div className="text-sm text-gray-900 ">
-                                                        {person.title}
-                                                    </div>
-                                                    <div className="text-sm text-gray-700">
-                                                        {person.role}
-                                                    </div>
-                                                </td>
-                                                <td className="whitespace-nowrap px-8 py-4 text-sm text-gray-700">
-                                                    {person.department}
-                                                </td>
-                                                <td className="whitespace-nowrap px-4 py-4 text-sm text-gray-700">
-                                                    {person.college}
-                                                </td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+        <NavBarPreLogin/>
+            <div className="mx-auto max-w-7xl px-2 md:px-0">
+            <div className="my-4">
+                <h1 className="text-3xl font-bold">Our Team</h1>
+                <p className="mt-2 text-gray-500">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+                </p>
+            </div>
+            <div className="grid grid-cols-1 gap-[30px] md:grid-cols-3">
+                <div className="flex flex-col items-center text-start">
+                <div
+                    className="relative flex h-[342px] w-full flex-col justify-end rounded-[10px] bg-red-300"
+                    style={{
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
+                    }}
+                >
+                    <img
+                    src="https://images.unsplash.com/photo-1540569014015-19a7be504e3a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzZ8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
+                    alt=""
+                    className="z-0 h-full w-full rounded-[10px] object-cover"
+                    />
+                    <div className="absolute bottom-4 left-4">
+                    <h1 className="text-xl font-semibold text-white">John Doe</h1>
+                    <h6 className="text-base text-white">Frontend Developer</h6>
                     </div>
                 </div>
-            </section>
+                </div>
+                <div className="flex flex-col items-center text-start">
+                <div
+                    className="relative flex h-[342px] w-full flex-col justify-end rounded-[10px] bg-red-300"
+                    style={{
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
+                    }}
+                >
+                    <img
+                    src="https://images.unsplash.com/photo-1513956589380-bad6acb9b9d4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
+                    alt=""
+                    className="z-0 h-full w-full rounded-[10px] object-cover"
+                    />
+                    <div className="absolute bottom-4 left-4">
+                    <h1 className="text-xl font-semibold text-white">Mark Cook</h1>
+                    <h6 className="text-base text-white">Backend Developer</h6>
+                    </div>
+                </div>
+                </div>
+                <div className="flex flex-col items-center text-start">
+                <div
+                    className="relative flex h-[342px] w-full flex-col justify-end rounded-[10px] bg-red-300"
+                    style={{
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
+                    }}
+                >
+                    <img
+                    src="https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDB8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
+                    alt=""
+                    className="z-0 h-full w-full rounded-[10px] object-cover"
+                    />
+                    <div className="absolute bottom-4 left-4">
+                    <h1 className="text-xl font-semibold text-white">Ketty</h1>
+                    <h6 className="text-base text-white">Designer</h6>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
         </>
     );
 }

@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useLoading } from '../Components/LoadingContext';
 import { Slide, ToastContainer,toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import { NavBarPostLogin } from '../Components/NavBarPostLogin';
 
 function InnovativeProductForm() {
   const { setIsLoading } = useLoading();
@@ -109,7 +110,9 @@ function InnovativeProductForm() {
   //   fetchData();
   // }, [setIsLoading]);
   return (
-    <div className="flex justify-center items-center min-h-screen bg-[url(src/assets/low-poly-grid-haikei.svg)]">
+    <>
+    <NavBarPostLogin/>
+      <div className="flex justify-center items-center min-h-screen bg-[url(src/assets/low-poly-grid-haikei.svg)]">
       <div className="flex flex-row bg-white p-6 rounded-lg shadow-lg" style={{ maxWidth: '1600px' }}>
         {uploadedImage && (
           <div className="flex-none w-1/2 pr-4">
@@ -248,6 +251,7 @@ function InnovativeProductForm() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

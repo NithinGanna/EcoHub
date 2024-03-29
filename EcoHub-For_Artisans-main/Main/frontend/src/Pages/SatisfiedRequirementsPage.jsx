@@ -1,5 +1,6 @@
 import  { useState, useEffect } from 'react';
 import axios from 'axios';
+import { NavBarPostLogin } from '../Components/NavBarPostLogin';
 
 const SatisfiedRequirementsPage = () => {
     const [satisfiedRequirements, setSatisfiedRequirements] = useState([]);
@@ -24,6 +25,8 @@ const SatisfiedRequirementsPage = () => {
     }
 
     return (
+        <>
+        <NavBarPostLogin/>
         <div className="container mx-auto p-4">
             <h1 className="text-2xl font-bold text-gray-800 mb-4">Satisfied Requirements</h1>
             <ul>
@@ -44,6 +47,7 @@ const SatisfiedRequirementsPage = () => {
                 ))}
             </ul>
         </div>
+        </>
     );
 };
 

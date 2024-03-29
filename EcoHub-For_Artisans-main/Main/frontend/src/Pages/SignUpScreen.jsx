@@ -10,6 +10,7 @@ import { Slide, ToastContainer,toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css"
 import Lottie from 'lottie-react';
 import signupanimation from '../assets/login.json';
+import { NavBarPreLogin } from '../Components/NavBarPreLogin';
 
 function SignupScreen() {
   const [username, setUsername] = useState('');
@@ -73,6 +74,8 @@ function SignupScreen() {
   };
 
   return (
+    <>
+    <NavBarPreLogin/>
     <div className="flex flex-row items-center justify-center min-h-screen bg-[url('src/assets/blob-scene-haikei.svg')]">
       <div className='mr-60'>
         <Lottie animationData={signupanimation} />
@@ -151,6 +154,7 @@ function SignupScreen() {
         </Link>
       </form>
     </div>
+    </>
   );
 }
 

@@ -15,7 +15,7 @@ import ProfilePage from './Pages/ProfilePage';
 import SatisfiedRequirementsPage from './Pages/SatisfiedRequirementsPage'
 
 import './App.css';
-import { IntroPage } from './Pages/IntroScreen';
+import { IntroScreen } from './Pages/IntroScreen';
 import About from './Pages/About';
 
 const MainWithLoading = () => {
@@ -25,7 +25,7 @@ const MainWithLoading = () => {
     <>
       {isLoading && <LoadingComponent />}
       <Routes>
-        <Route path="/" element={<IntroPage />} />
+        <Route path="/" element={<IntroScreen />} />
         <Route path="/login" element={<LoginScreen />} />
         <Route path="/signup" element={<SignupScreen />} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />

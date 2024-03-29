@@ -1,10 +1,17 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Lottie from 'lottie-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import avatardata from '../assets/user_avatar.json';
 import { NavBarPostLogin } from '../Components/NavBarPostLogin';
+import { useNavigate } from 'react-router-dom';
+
 
 const ProfilePage = () => {
+
+    const navigate = useNavigate();
+
     const [user, setUser] = useState(null);
     const [error, setError] = useState('');
     const [showWasteRequests, setShowWasteRequests] = useState(false);
@@ -26,6 +33,21 @@ const ProfilePage = () => {
         fetchUserData();
     }, []);
 
+    const handleLogout = async () => {
+        try {
+            // Send a request to your backend to logout
+            await axios.post('http://localhost:5001/logout');
+            // After successful logout, clear user state
+            setUser(null);
+            setError('');
+            navigate('/');
+        } catch (error) {
+            console.error('Error logging out:', error);
+            setError('Error logging out. Please try again.');
+        }
+    };
+    
+
     if (error) {
         return <div className="text-red-500">Error: {error}</div>;
     }
@@ -45,6 +67,16 @@ const ProfilePage = () => {
                 <p className="text-md text-gray-600 font-bold">{user.username}</p>
                 <p className="text-md text-gray-600 font-bold">{user.email}</p>
             </div>
+            {/* Logout Button */}
+            <button
+                className="self-start mt-4 ml-4 p-2 rounded-lg bg-red-500 text-white hover:bg-red-600 focus:outline-none focus:ring focus:ring-red-300"
+                onClick={handleLogout}
+            >
+                <div className='p-2'>
+                Logout
+                <FontAwesomeIcon icon={faSignOutAlt} size="lg" />
+                </div>
+            </button>
             </div>
             {/* Right side - Waste Requests, Innovative Products, User Contributions, Satisfied Requirements */}
             <div className="flex-grow" style={{flex:'1 1 65%'}}>
@@ -179,3 +211,5 @@ const ProfilePage = () => {
 };
 
 export default ProfilePage;
+
+

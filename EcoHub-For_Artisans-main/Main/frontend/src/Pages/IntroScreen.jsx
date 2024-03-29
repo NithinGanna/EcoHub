@@ -6,7 +6,7 @@ import { Footer } from '../Components/Footer'
 import { NavBarPreLogin } from '../Components/NavBarPreLogin'
 import { Link } from 'react-router-dom'
 
-export function IntroPage() {
+export function IntroScreen() {
   return (
     <div className="relative w-full">
       <NavBarPreLogin />

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 export function Footer() {
   return (
-    <footer className="bottom-0 w-full bg-white-200-local p-4">
+    <footer className=" bottom-0 w-full bg-white-200-local p-4">
       <section className="relative overflow-hidden bg-white py-8">
         <div className="container relative z-10 mx-auto px-4">
           <div className="-m-8 flex flex-wrap items-center justify-between">

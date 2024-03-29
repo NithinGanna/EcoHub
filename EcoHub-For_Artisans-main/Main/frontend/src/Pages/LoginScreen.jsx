@@ -9,6 +9,7 @@ import Login from '../assets/signup.json'
 import Lottie from 'lottie-react';
 import { Slide, ToastContainer,toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css"
+import { NavBarPreLogin } from '../Components/NavBarPreLogin';
 // import { useLoading } from '../Components/LoadingContext';
 
 function LoginScreen() {
@@ -85,6 +86,8 @@ function LoginScreen() {
   // }, [setIsLoading]);
 
   return (
+    <>
+    <NavBarPreLogin/>
     <div className="flex flex-row items-center justify-center min-h-screen bg-[url('src/assets/wave-haikei-og.svg')] bg-cover">
       <div className='mr-56 mb-24'>
       <Lottie animationData={Login} style={{height:"300px",width:"300px"}}/>
@@ -142,6 +145,7 @@ function LoginScreen() {
         </div>
       </form>
     </div>
+    </>
   );
 }
 
