@@ -1,6 +1,6 @@
-import { FooterThree } from "../Components/Footer"
-import { ExampleNavbarFour } from "../Components/NavBarPostLogin"
-import { ProductThree } from "../Components/ProductCards"
+import { Footer } from "../Components/Footer"
+import { NavBarPostLogin } from "../Components/NavBarPostLogin"
+import { ProductCard } from "../Components/ProductCards"
 // import { useLoading } from "../Components/LoadingContext";
 // import { useEffect } from "react";
 
@@ -29,9 +29,9 @@ function HomePage() {
   
   return (
     <div>
-        <ExampleNavbarFour/>
-        <ProductThree />
-        <FooterThree/>
+        <NavBarPostLogin/>
+        <ProductCard />
+        <Footer/>
     </div>
   )
 }

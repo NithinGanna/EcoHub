@@ -5,7 +5,7 @@ import { Menu, X } from 'lucide-react'
 import logo from '../assets/logomain.png'
 import { Link } from 'react-router-dom'
 
-export function ExampleNavbarThree() {
+export function NavBarPreLogin() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
 
   const toggleMenu = () => {

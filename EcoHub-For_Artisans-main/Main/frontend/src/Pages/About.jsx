@@ -42,7 +42,7 @@ const people = [
 ];
 // ... (previous imports and code)
 
-function TableOne() {
+function About() {
     return (
         <>
             <section className="mx-auto w-full max-w-7xl px-4 py-4">
@@ -128,4 +128,4 @@ function TableOne() {
     );
 }
 
-export default TableOne;
+export default About;

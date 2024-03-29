@@ -1,6 +1,6 @@
 import { PaintBucket, Heart, Globe } from 'lucide-react'
 
-export function FeatureTwo() {
+export function IntroComp2() {
     return (
         <section>
             <div className="mx-auto max-w-7xl px-2 lg:px-8 mb-20 mt-20 ml-8">

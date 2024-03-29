@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-export function FooterThree() {
+export function Footer() {
   return (
     <footer className="bottom-0 w-full bg-white-200-local p-4">
       <section className="relative overflow-hidden bg-white py-8">

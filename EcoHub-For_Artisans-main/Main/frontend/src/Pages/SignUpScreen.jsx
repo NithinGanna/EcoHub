@@ -1,4 +1,4 @@
-// src/components/SignupPage.js
+// src/components/SignupScreen.js
 
 import { useState } from 'react';
 import logo from '../assets/logomain.png'
@@ -11,7 +11,7 @@ import "react-toastify/dist/ReactToastify.css"
 import Lottie from 'lottie-react';
 import signupanimation from '../assets/login.json';
 
-function SignupPage() {
+function SignupScreen() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -154,4 +154,4 @@ function SignupPage() {
   );
 }
 
-export default SignupPage;
+export default SignupScreen;

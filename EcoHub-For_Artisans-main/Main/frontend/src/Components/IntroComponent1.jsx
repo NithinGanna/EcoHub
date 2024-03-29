@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { motion, useAnimation, useScroll } from 'framer-motion';
 import { CheckSquare, Zap, DollarSign, ArrowBigUpDash } from 'lucide-react';
 
-export function FeatureThree() {
+export function IntroComp1() {
   const { scrollYProgress } = useScroll();
   const widthAnimation = useAnimation();
 

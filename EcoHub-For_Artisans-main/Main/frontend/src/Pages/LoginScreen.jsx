@@ -5,13 +5,13 @@ import { faUser, faLock } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import loginscreen from '../assets/signup.json'
+import Login from '../assets/signup.json'
 import Lottie from 'lottie-react';
 import { Slide, ToastContainer,toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css"
 // import { useLoading } from '../Components/LoadingContext';
 
-function LoginPage() {
+function LoginScreen() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -87,7 +87,7 @@ function LoginPage() {
   return (
     <div className="flex flex-row items-center justify-center min-h-screen bg-[url('src/assets/wave-haikei-og.svg')] bg-cover">
       <div className='mr-56 mb-24'>
-      <Lottie animationData={loginscreen} style={{height:"300px",width:"300px"}}/>
+      <Lottie animationData={Login} style={{height:"300px",width:"300px"}}/>
       </div>
       <form className="p-6 bg-neutral-100 rounded-3xl shadow-xl w-96 mb-24">
       <img src={logo} alt="Logo" className="mx-auto h-24" />
@@ -145,4 +145,4 @@ function LoginPage() {
   );
 }
 
-export default LoginPage;
+export default LoginScreen;

@@ -1,15 +1,15 @@
 'use client'
-import { FeatureThree } from '../Components/FeatureComponent'
-import { FeatureTwo } from '../Components/FeatureComponent1'
-import { FeatureOne } from '../Components/FeatureComponent2'
-import { FooterThree } from '../Components/Footer'
-import { ExampleNavbarThree } from '../Components/NavBarPreLogin'
+import { IntroComp1 } from '../Components/IntroComponent1'
+import { IntroComp2 } from '../Components/IntroComponent3'
+import { IntroComp3 } from '../Components/IntroComponent2'
+import { Footer } from '../Components/Footer'
+import { NavBarPreLogin } from '../Components/NavBarPreLogin'
 import { Link } from 'react-router-dom'
 
-export function HeroThree() {
+export function IntroPage() {
   return (
     <div className="relative w-full">
-      <ExampleNavbarThree />
+      <NavBarPreLogin />
       <div className="relative isolate z-0 bg-white px-6 pt-14 lg:px-8 mb-10 ">
         <div className="relative mx-auto max-w-2xl py-24">
           <div className="absolute inset-x-0 -top-[4rem] -z-10 transform-gpu overflow-hidden blur-3xl md:-top-[10rem]">
@@ -64,10 +64,10 @@ export function HeroThree() {
           </div>
         </div>
       </div>
-      <FeatureThree />
-      <FeatureTwo />
-      <FeatureOne />
-      <FooterThree />
+      <IntroComp1 />
+      <IntroComp2 />
+      <IntroComp3 />
+      <Footer />
     </div>
   )
 }

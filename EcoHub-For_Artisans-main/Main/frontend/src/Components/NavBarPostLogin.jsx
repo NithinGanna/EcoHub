@@ -23,7 +23,7 @@ const menuItems = [
     href: '/satisfiedRequirements'
   }
 ]
-export function ExampleNavbarFour() {
+export function NavBarPostLogin() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
 
   const toggleMenu = () => {
