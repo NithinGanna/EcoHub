@@ -28,9 +28,11 @@ function HomePage() {
 
   
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
         <NavBarPostLogin/>
-        <ProductCard />
+        <div className="flex-grow">
+          <ProductCard />
+        </div>
         <Footer/>
     </div>
   )
