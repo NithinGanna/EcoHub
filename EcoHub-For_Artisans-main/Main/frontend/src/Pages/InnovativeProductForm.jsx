@@ -4,7 +4,7 @@ import { useLoading } from '../Components/LoadingContext';
 import { Slide, ToastContainer,toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
-function ProductForm() {
+function InnovativeProductForm() {
   const { setIsLoading } = useLoading();
   const [uploadedImage, setUploadedImage] = useState(null);
   const [title, setTitle] = useState("");
@@ -251,7 +251,7 @@ function ProductForm() {
   );
 }
 
-export default ProductForm;
+export default InnovativeProductForm;
 
 
 

@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { motion } from 'framer-motion';
 
-export function ProductThree() {
+export function ProductCard() {
   const [wasteReqData, setWasteReqData] = useState([]);
   const cardVariants = {
     hidden: { opacity: 0, y: 20 },

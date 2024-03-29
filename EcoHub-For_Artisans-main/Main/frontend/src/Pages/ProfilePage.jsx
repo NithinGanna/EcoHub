@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Lottie from 'lottie-react';
 import avatardata from '../assets/user_avatar.json';
-import { ExampleNavbarFour } from '../Components/NavBarPostLogin';
+import { NavBarPostLogin } from '../Components/NavBarPostLogin';
 
 const ProfilePage = () => {
     const [user, setUser] = useState(null);
@@ -36,7 +36,7 @@ const ProfilePage = () => {
 
     return (
         <>
-        <ExampleNavbarFour/>
+        <NavBarPostLogin/>
         <div className="container mx-auto p-4 flex">
             {/* Left side - User Details */}
             <div className='flex flex-col'>

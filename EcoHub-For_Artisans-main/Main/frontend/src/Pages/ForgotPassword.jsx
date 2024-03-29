@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function ForgotPasswordPage() {
+function ForgotPassword() {
     const [email, setEmail] = useState('');
     const [isEmailSent, setIsEmailSent] = useState(false);
     const [newPassword, setNewPassword] = useState('');
@@ -78,4 +78,4 @@ function ForgotPasswordPage() {
     );
 }
 
-export default ForgotPasswordPage;
+export default ForgotPassword;

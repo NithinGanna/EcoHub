@@ -3,20 +3,20 @@
 import { LoadingProvider, useLoading } from './Components/LoadingContext';
 import LoadingComponent from './Pages/Loading';
 import { Route, Routes } from 'react-router-dom';
-import LoginPage from './Pages/LoginScreen';
-import SignupPage from './Pages/SignUpScreen';
-import ForgotPasswordPage from './Pages/ForgotPassword';
+import LoginScreen from './Pages/LoginScreen';
+import SignupScreen from './Pages/SignUpScreen';
+import ForgotPassword from './Pages/ForgotPassword';
 import HomePage from './Pages/HomePage';
-import ProductForm from './Pages/InnovativeProductForm';
+import InnovativeProductForm from './Pages/InnovativeProductForm';
 import WasteReqForm from './Pages/WasteRequirementForm';
-import ProductOverviewTwo from './Pages/ProductOverview';
+import ProductOverview from './Pages/ProductOverview';
 import ContributorForm from './Pages/ContributorForm';
 import ProfilePage from './Pages/ProfilePage';
 import SatisfiedRequirementsPage from './Pages/SatisfiedRequirementsPage'
 
 import './App.css';
-import { HeroThree } from './Pages/IntroScreen';
-import TableOne from './Pages/About';
+import { IntroPage } from './Pages/IntroScreen';
+import About from './Pages/About';
 
 const MainWithLoading = () => {
   const { isLoading } = useLoading();
@@ -25,18 +25,18 @@ const MainWithLoading = () => {
     <>
       {isLoading && <LoadingComponent />}
       <Routes>
-        <Route path="/" element={<HeroThree />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/signup" element={<SignupPage />} />
-        <Route path="/forgotpassword" element={<ForgotPasswordPage />} />
+        <Route path="/" element={<IntroPage />} />
+        <Route path="/login" element={<LoginScreen />} />
+        <Route path="/signup" element={<SignupScreen />} />
+        <Route path="/forgotpassword" element={<ForgotPassword />} />
         <Route path="/homepage" element={<HomePage />} />
-        <Route path="/iproductform" element={<ProductForm />} />
+        <Route path="/iproductform" element={<InnovativeProductForm />} />
         <Route path="/wreqform" element={<WasteReqForm />} />
-        <Route path="/product/:id" element={<ProductOverviewTwo />} />
+        <Route path="/product/:id" element={<ProductOverview />} />
         <Route path="/contribute/:id" element={<ContributorForm />} />
         <Route path="/profile" element={<ProfilePage/>} />
         <Route path="/satisfiedRequirements" element={<SatisfiedRequirementsPage/>} />
-        <Route path="/about" element={<TableOne/>} />
+        <Route path="/about" element={<About/>} />
       </Routes>
     </>
   );
