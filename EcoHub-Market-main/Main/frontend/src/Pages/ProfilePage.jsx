@@ -18,7 +18,7 @@ const ProfilePage = () => {
   const navigate = useNavigate();
   const handleLogout = async () => {
     try {
-      await axios.get('http://localhost:5001/logout');
+      await axios.get('http://localhost:5001/logout',{withCredentials : true});
       console.log('Logged out successfully');
       navigate('/'); // Redirect to home page or login page after logout
     } catch (error) {

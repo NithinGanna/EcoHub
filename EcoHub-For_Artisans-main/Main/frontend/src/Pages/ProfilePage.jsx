@@ -33,20 +33,39 @@ const ProfilePage = () => {
         fetchUserData();
     }, []);
 
+    // const handleLogout = async () => {
+    //     try {
+    //         // Send a request to your backend to logout
+    //         const response = await axios.post('http://localhost:5001/logout',{ withCredentials: true });
+    
+    //         // Check if the response indicates successful logout
+    //         if (response.status === 200) {
+    //             // After successful logout, clear user state
+    //             console.log("respomse success");
+    //             setUser(null);
+    //             setError('');
+    //             // navigate('/');
+    //             console.log('Logout successful');
+    //         } else {
+    //             console.error('Logout request failed with status:', response.status);
+    //             setError('Error logging out. Please try again.');
+    //         }
+    //     } catch (error) {
+    //         console.error('Error logging out:', error);
+    //         setError('Error logging out. Please try again.');
+    //     }
+    // };
+
+    axios.defaults.withCredentials = true;
+    
     const handleLogout = async () => {
         try {
-            // Send a request to your backend to logout
             await axios.post('http://localhost:5001/logout');
-            // After successful logout, clear user state
-            setUser(null);
-            setError('');
             navigate('/');
         } catch (error) {
-            console.error('Error logging out:', error);
-            setError('Error logging out. Please try again.');
+            console.error('Error during logout:', error);
         }
     };
-    
 
     if (error) {
         return <div className="text-red-500">Error: {error}</div>;
@@ -73,8 +92,8 @@ const ProfilePage = () => {
                 onClick={handleLogout}
             >
                 <div className='p-2'>
-                Logout
-                <FontAwesomeIcon icon={faSignOutAlt} size="lg" />
+                    Logout
+                    <FontAwesomeIcon icon={faSignOutAlt} size="lg" />
                 </div>
             </button>
             </div>
@@ -86,7 +105,7 @@ const ProfilePage = () => {
                         className="text-xl font-bold text-gray-800 mb-2 cursor-pointer"
                         onClick={() => setShowWasteRequests(!showWasteRequests)}
                     >
-                        Waste Requests
+                        Waste Requests ({user.wasteReq.length})
                     </h2>
                     {showWasteRequests && (
                         <ul>
@@ -114,7 +133,7 @@ const ProfilePage = () => {
                         className="text-xl font-bold text-gray-800 mb-2 cursor-pointer"
                         onClick={() => setShowInnovativeProducts(!showInnovativeProducts)}
                     >
-                        Innovative Products
+                        Innovative Products ({user.innovativeProds.length})
                     </h2>
                     {showInnovativeProducts && (
                         <ul>
@@ -143,7 +162,7 @@ const ProfilePage = () => {
                         className="text-xl font-bold text-gray-800 mb-2 cursor-pointer"
                         onClick={() => setShowUserContributions(!showUserContributions)}
                     >
-                        User Contributions
+                        User Contributions ({user.userContributions.length})
                     </h2>
                     {showUserContributions && (
                         <ul>
@@ -169,7 +188,7 @@ const ProfilePage = () => {
                         className="text-xl font-bold text-gray-800 mb-2 cursor-pointer"
                         onClick={() => setShowSatisfiedRequirements(!showSatisfiedRequirements)}
                     >
-                        Satisfied Requirements
+                        Satisfied Requirements ({user.satisfiedReq.length})
                     </h2>
                     {showSatisfiedRequirements && (
                         <ul>
