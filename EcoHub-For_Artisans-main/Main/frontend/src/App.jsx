@@ -6,7 +6,7 @@ import { Route, Routes } from 'react-router-dom';
 import LoginScreen from './Pages/LoginScreen';
 import SignupScreen from './Pages/SignUpScreen';
 import ForgotPassword from './Pages/ForgotPassword';
-import HomePage from './Pages/HomePage';
+import ArtisanHomePage from './Pages/ArtisanHomePage';
 import InnovativeProductForm from './Pages/InnovativeProductForm';
 import WasteReqForm from './Pages/WasteRequirementForm';
 import ProductOverview from './Pages/ProductOverview';
@@ -29,7 +29,7 @@ const MainWithLoading = () => {
         <Route path="/login" element={<LoginScreen />} />
         <Route path="/signup" element={<SignupScreen />} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
-        <Route path="/homepage" element={<HomePage />} />
+        <Route path="/artisan-dashboard" element={<ArtisanHomePage />} />
         <Route path="/iproductform" element={<InnovativeProductForm />} />
         <Route path="/wreqform" element={<WasteReqForm />} />
         <Route path="/product/:id" element={<ProductOverview />} />

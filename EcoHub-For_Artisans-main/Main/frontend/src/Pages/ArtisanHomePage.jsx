@@ -4,7 +4,7 @@ import { ProductCard } from "../Components/ProductCards"
 // import { useLoading } from "../Components/LoadingContext";
 // import { useEffect } from "react";
 
-function HomePage() {
+function ArtisanHomePage() {
   
 
   // const { setIsLoading } = useLoading();
@@ -29,11 +29,15 @@ function HomePage() {
   
   return (
     <div>
-        <NavBarPostLogin/>
+        <div className="flex flex-col min-h-screen">
+      <NavBarPostLogin />
+      <div className="flex-grow">
         <ProductCard />
-        <Footer/>
+      </div>
+      <Footer />
+    </div>
     </div>
   )
 }
 
-export default HomePage
+export default ArtisanHomePage

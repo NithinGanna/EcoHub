@@ -11,10 +11,10 @@ function HomePage() {
   return (
     <div>
         <ExampleNavbarFour/>
-    
         <ProductThree />
         {/* <Filters onFilterChange={handleFilterChange} />
         <ProductList products={filteredProducts} /> */}
+        
     </div>
   )
 }
