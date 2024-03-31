@@ -74,6 +74,15 @@ router.post("/signin", async (req, res) => {
     }
 });
 
+router.post("/logout", (req, res) => {
+    // Clear the token or session
+    res.clearCookie('token');
+    console.log("cleared cookie");
+    // Optionally, perform any other cleanup tasks
+    // For example, clear any user-related data stored in session
+    res.status(200).json({ msg: "Logout successful" });
+});
+
 router.patch("/updateUsersInnovativeProd", userMiddleware, async (req, res) => {
     try {
         const userEmail = req.user.email;
@@ -174,14 +183,36 @@ router.get("/profile", userMiddleware, async(req,res)=>{
     return res.json(user);
 })
 
-router.post("/logout", (req, res) => {
-    // Clear the token or session
-    res.clearCookie('token');
-    console.log("cleared cookie");
-    // Optionally, perform any other cleanup tasks
-    // For example, clear any user-related data stored in session
-    res.status(200).json({ msg: "Logout successful" });
-});
+// for market profile
+
+router.get('/user', userMiddleware, async (req, res) => {
+    try {
+        // Fetching user by email
+        const email = req.user.email;
+        const user = await User.findOne({ email: email });
+  
+        if (!user) {
+            return res.status(404).send('User not found');
+        }
+  
+        // Extracting boughtProducts and filtering out Stripe session IDs
+        const boughtProducts = user.boughtProducts.map(product => {
+            const { stripeSessionId, ...productDetails } = product;
+            return productDetails;
+        });
+  
+        // Sending the modified response
+        res.json({
+            username: user.username,
+            email: user.email,
+            boughtProducts: boughtProducts
+        });
+        // console.log(res.json)
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Server error');
+    }
+  });
 
 
 module.exports = router;

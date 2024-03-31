@@ -66,6 +66,7 @@ router.get("/getWasteReq", userMiddleware, async (req, res) => {
 router.get("/getWasteReq/:id", async (req, res) => {
   try {
       const id = req.params.id;
+      // console.log(id);
       const wasteRequest = await wasteReq.findById(id);
 
       if (wasteRequest) {

@@ -8,6 +8,9 @@ const UserSchema = mongoose.Schema({
     wasteReq: [],
     userContributions: [],
     satisfiedReq: [],
+    cart: [], 
+    buyCart:[],
+    boughtProducts:[],
 })
 
 const User = mongoose.model("user", UserSchema)

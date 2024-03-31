@@ -47,7 +47,7 @@ export function MarketNavBar() {
     </div>
         <div className="ml-2 mt-2 hidden lg:block">
           <span className="relative inline-block">
-            <Link to ="/profile">
+            <Link to ="/customer-profile">
             <img
               className="h-12 w-12 rounded-full mr-6"
               src="src/assets/avatar.jpg" // Update the path if necessary

@@ -65,4 +65,22 @@ router.get("/getInnovativeProd", async (req, res) => {
 });
 
 
+router.get("/getInnovativeProd/:id", async (req, res) => {
+  try {
+      const id = req.params.id;
+      // console.log(id);
+      const innovative_prd = await innovativeProd.findById(id);
+
+      if (innovative_prd) {
+        // console.log(innovative_prd.title);
+          res.json(innovative_prd);
+      } else {
+          res.status(404).json({ msg: "Innovative product request not found" });
+      }
+  } catch (error) {
+      console.error("Error fetching waste request:", error);
+      res.status(500).json({ msg: "Internal Server Error" });
+  }
+});
+
 module.exports = router;

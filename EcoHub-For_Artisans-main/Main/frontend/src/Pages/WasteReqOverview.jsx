@@ -35,11 +35,11 @@ function WasteReqOverview() {
       <div className="flex items-center">
         <ol className="flex w-full items-center overflow-hidden">
           <li className="text-body hover:text-heading px-2.5 text-sm transition duration-200 ease-in first:pl-0 last:pr-0">
-            <Link to="/homepage">Home</Link>
+            <Link to="/artisan-dashboard">Home</Link>
           </li>
           <li className="text-body mt-0.5 text-base">/</li>
           <li className="text-body hover:text-heading px-2.5 text-sm transition duration-200 ease-in first:pl-0 last:pr-0">
-            <Link to="/products">Products</Link>
+            <Link to="/artisan-dashboard">Products</Link>
           </li>
           <li className="text-body mt-0.5 text-base">/</li>
           <li className="text-body hover:text-heading px-2.5 text-sm transition duration-200 ease-in first:pl-0 last:pr-0">

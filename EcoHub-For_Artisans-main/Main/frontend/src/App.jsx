@@ -9,11 +9,12 @@ import ForgotPassword from './Pages/ForgotPassword';
 import ArtisanHomePage from './Pages/ArtisanHomePage';
 import InnovativeProductForm from './Pages/InnovativeProductForm';
 import WasteReqForm from './Pages/WasteRequirementForm';
-import ProductOverview from './Pages/WasteReqOverview';
+import ProductOverview from './MarketPages/ProductOverview';
 import ContributorForm from './Pages/ContributorForm';
 import ProfilePage from './Pages/ProfilePage';
 import SatisfiedRequirementsPage from './Pages/SatisfiedRequirementsPage'
 import MarketHomePage from './MarketPages/MarketHomePage'
+import MarketProfilePage from './MarketPages/MarketProfilePage'
 
 import './App.css';
 import { IntroScreen } from './Pages/IntroScreen';
@@ -39,6 +40,7 @@ const MainWithLoading = () => {
         <Route path="/product/:id" element={<ProductOverview/>}/>
         <Route path="/contribute/:id" element={<ContributorForm />} />
         <Route path="/profile" element={<ProfilePage/>} />
+        <Route path="/customer-profile" element={<MarketProfilePage/>} />
         <Route path="/satisfiedRequirements" element={<SatisfiedRequirementsPage/>} />
         <Route path="/about" element={<About/>} />
       </Routes>
