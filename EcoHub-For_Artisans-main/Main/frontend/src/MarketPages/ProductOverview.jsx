@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, useParams , Link } from 'react-router-dom';
+import { MarketNavBarCart } from '../MarketComponents/MarketNavBarCart';
 
 export const ProductOverview = () => {
   const [innovreq, setInnovreq] = useState(null);
@@ -72,8 +73,10 @@ export const ProductOverview = () => {
   }
 
   return (
+    <>
+    <MarketNavBarCart/>
     <div className="mx-auto max-w-7xl px-4 md:px-8 2xl:px-16 pt-8">
-      <div className="flex items-center">
+      {/* <div className="flex items-center">
         <ol className="flex w-full items-center overflow-hidden">
           <li className="text-body hover:text-heading px-2.5 text-sm transition duration-200 ease-in first:pl-0 last:pr-0">
             <Link to="/customer-dashboard">Home</Link>
@@ -87,7 +90,7 @@ export const ProductOverview = () => {
             {innovreq.title}
           </li>
         </ol>
-      </div>
+      </div> */}
       <div className="block grid-cols-9 items-start gap-x-10 pb-10 pt-7 lg:grid lg:pb-14 xl:gap-x-14 2xl:pb-20">
         <div className="col-span-6">
           <div className="duration-150 ease-in hover:opacity-90 mr-16">
@@ -134,6 +137,7 @@ export const ProductOverview = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

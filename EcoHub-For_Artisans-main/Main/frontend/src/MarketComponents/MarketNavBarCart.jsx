@@ -1,27 +1,29 @@
-import { Menu, X, ShoppingCart,ChevronRight } from 'lucide-react'; // Replace ShoppingCart with the actual cart icon if different
+import React from 'react';
+import { Menu, X, ShoppingCart, ChevronRight } from 'lucide-react';
 import logo from '../assets/logomain.png';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
 
 const menuItems = [
-  {
-    name: 'Home',
-    href: '/customer-dashboard',
-  },
+  
 ];
 
-export function MarketNavBar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+export function MarketNavBarCart() {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   return (
     <div className="relative w-full bg-white">
-      <div className="mx-auto flex max-w-8xl mb-10 items-center justify-between px-6 py-2 sm:px-8 lg:px-10">
+      <div className="mx-auto flex max-w-8xl items-center justify-between px-6 py-2 sm:px-8 lg:px-10">
         <div className="inline-flex items-center space-x-2">
+          
+          {/* Home Button */}
           <Link to="/customer-dashboard">
-            <img src={logo} alt="Logo" className="h-16 mt-2" />
+            <div className="inline-flex items-center text-xl font-bold  text-gray-800 mr-4 hover:text-gray-900">
+              Home
+            </div>
           </Link>
         </div>
         <div className="hidden lg:block">
@@ -38,33 +40,14 @@ export function MarketNavBar() {
             ))}
           </ul>
         </div>
-        <div className="flex grow justify-end">
-      <input
-        className="flex h-10 w-[250px] rounded-md bg-gray-100 px-3 py-2 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 mr-6"
-        type="text"
-        placeholder="Search"
-      />
-    </div>
-        <div className="ml-2 mt-2 hidden lg:block">
-          <span className="relative inline-block">
-            <Link to ="/customer-profile">
-            <img
-              className="h-12 w-12 rounded-full mr-6"
-              src="src/assets/avatar.jpg" // Update the path if necessary
-              alt="User"
-            />
-            </Link>
-          </span>
-        </div>
         {/* Add to Cart Button */}
-        <Link to='/cart'>
-        <button
-      
-          className="ml-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-[#617a4f] hover:bg-[#617a4f] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
-        >
-          <ShoppingCart className="mr-2 -ml-1 h-5 w-5" aria-hidden="true" />
-          Cart
-        </button>
+        <Link to="/cart">
+          <button
+            className="ml-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-[#617a4f] hover.bg-[#446536] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+          >
+            <ShoppingCart className="mr-2 -ml-1 h-5 w-5" aria-hidden="true" />
+            Cart
+          </button>
         </Link>
         <div className="ml-2 lg:hidden">
           <Menu onClick={toggleMenu} className="h-6 w-6 cursor-pointer" />

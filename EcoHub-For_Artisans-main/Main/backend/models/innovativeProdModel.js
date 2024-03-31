@@ -15,3 +15,4 @@ const innovativeProdSchema = mongoose.Schema({
 const innovativeProd = mongoose.model("innovativeProd", innovativeProdSchema);
 
 module.exports = innovativeProd;
+

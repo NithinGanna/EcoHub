@@ -11,6 +11,8 @@ const userRouter = require("./routes/userRoutes");
 const wasteReqRouter = require("./routes/wasteReqRoutes");
 const innovativeProdRouter = require("./routes/innovativeProdRoutes");
 
+const cartRouter =require("./routes/cart")
+
 app.use(cors({
     origin: 'http://localhost:5173', // Replace with your frontend domain
     credentials: true,
@@ -21,6 +23,8 @@ app.use(express.json({ limit: '10mb' })); // to resolve payload large error
 app.use(userRouter);
 app.use(wasteReqRouter);
 app.use(innovativeProdRouter);
+
+app.use(cartRouter);
 
 connectDB(process.env.MONGO_URI);
 

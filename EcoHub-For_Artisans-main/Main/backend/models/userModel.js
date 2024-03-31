@@ -8,6 +8,9 @@ const UserSchema = mongoose.Schema({
     wasteReq: [],
     userContributions: [],
     satisfiedReq: [],
+    verified:{
+        type:Boolean,
+        default:true},
     cart: [], 
     buyCart:[],
     boughtProducts:[],
