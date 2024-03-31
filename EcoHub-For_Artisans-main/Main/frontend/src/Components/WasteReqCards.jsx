@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { motion } from 'framer-motion';
 
-export function ProductCard() {
+export function WasteReqCards() {
   const [wasteReqData, setWasteReqData] = useState([]);
   const cardVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -35,7 +35,7 @@ export function ProductCard() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
       {wasteReqData.map((wasteReq, index) => (
-        <Link to={`/product/${wasteReq._id}`} key={index}>
+        <Link to={`/wastereq/${wasteReq._id}`} key={index}>
           <motion.div 
             key={index}
             variants={cardVariants}
