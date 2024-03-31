@@ -21,18 +21,6 @@ const MarketProfilePage = () => {
 
   const navigate = useNavigate();
 
-  axios.defaults.withCredentials = true;
-
-  const handleLogout = async () => {
-    try {
-      await axios.get('http://localhost:5001/logout');
-      console.log('Logged out successfully');
-      navigate('/'); // Redirect to home page or login page after logout
-    } catch (error) {
-      console.error("Error during logout:", error);
-    }
-  };
-
   useEffect(() => {
     const fetchUserData = async () => {
       try {
@@ -52,6 +40,18 @@ const MarketProfilePage = () => {
       prevSelectedProductId === productId ? null : productId
     );
   };
+
+  axios.defaults.withCredentials = true;
+    
+    const handleLogout = async () => {
+        try {
+            await axios.post('http://localhost:5001/logout');
+            navigate('/');
+        } catch (error) {
+            console.error('Error during logout:', error);
+        }
+    };
+
 
   if (error) {
     return <div className="text-red-500 text-center mt-8">Error: {error}</div>;
