@@ -22,6 +22,8 @@ import About from './Pages/About';
 import WasteReqOverview from './Pages/WasteReqOverview';
 import { Cart } from './MarketComponents/Cart';
 import  { Checkout } from './MarketComponents/Checkout';
+import { Success } from './MarketComponents/Success';
+import { Failed } from './MarketComponents/Failed';
 
 const MainWithLoading = () => {
   const { isLoading } = useLoading();
@@ -47,6 +49,8 @@ const MainWithLoading = () => {
         <Route path="/about" element={<About/>} />
         <Route path='/cart' element={<Cart/>} />
         <Route path='/checkout' element={<Checkout/>} />
+        <Route path='/success' element={<Success/>} />
+        <Route path='/fail' element={<Failed/>} />
       </Routes>
     </>
   );

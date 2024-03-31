@@ -1,7 +1,15 @@
-import React from 'react'
+import { X } from 'lucide-react'
+import  { useState, useEffect } from 'react';
+import axios from 'axios';
+import { loadStripe } from '@stripe/stripe-js';
+import { MarketNavBar } from './MarketNavBar';
 
-export const Checkout = () => {
+
+export function Checkout() {
+
   return (
-    <div>Checkout</div>
-  )
+    <>
+    <MarketNavBar/>
+    </>
+    )
 }
