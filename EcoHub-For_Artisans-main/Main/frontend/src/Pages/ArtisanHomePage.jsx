@@ -1,6 +1,6 @@
 import { Footer } from "../Components/Footer"
 import { NavBarPostLogin } from "../Components/NavBarPostLogin"
-import { ProductCard } from "../Components/ProductCards"
+import { WasteReqCards } from "../Components/WasteReqCards"
 // import { useLoading } from "../Components/LoadingContext";
 // import { useEffect } from "react";
 
@@ -32,7 +32,7 @@ function ArtisanHomePage() {
         <div className="flex flex-col min-h-screen">
       <NavBarPostLogin />
       <div className="flex-grow">
-        <ProductCard />
+        <WasteReqCards />
       </div>
       <Footer />
     </div>

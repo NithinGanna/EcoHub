@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, useNavigate, Link } from "react-router-dom";
 
-function ProductOverview() {
+function WasteReqOverview() {
   const [wasteReq, setWasteReq] = useState(null);
   const { id } = useParams();
   const navigate = useNavigate();
@@ -93,4 +93,4 @@ function ProductOverview() {
   );
 }
 
-export default ProductOverview;
+export default WasteReqOverview;

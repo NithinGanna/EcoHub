@@ -9,14 +9,16 @@ import ForgotPassword from './Pages/ForgotPassword';
 import ArtisanHomePage from './Pages/ArtisanHomePage';
 import InnovativeProductForm from './Pages/InnovativeProductForm';
 import WasteReqForm from './Pages/WasteRequirementForm';
-import ProductOverview from './Pages/ProductOverview';
+import ProductOverview from './Pages/WasteReqOverview';
 import ContributorForm from './Pages/ContributorForm';
 import ProfilePage from './Pages/ProfilePage';
 import SatisfiedRequirementsPage from './Pages/SatisfiedRequirementsPage'
+import MarketHomePage from './MarketPages/MarketHomePage'
 
 import './App.css';
 import { IntroScreen } from './Pages/IntroScreen';
 import About from './Pages/About';
+import WasteReqOverview from './Pages/WasteReqOverview';
 
 const MainWithLoading = () => {
   const { isLoading } = useLoading();
@@ -30,9 +32,11 @@ const MainWithLoading = () => {
         <Route path="/signup" element={<SignupScreen />} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
         <Route path="/artisan-dashboard" element={<ArtisanHomePage />} />
+        <Route path="/customer-dashboard" element={<MarketHomePage />} />
         <Route path="/iproductform" element={<InnovativeProductForm />} />
         <Route path="/wreqform" element={<WasteReqForm />} />
-        <Route path="/product/:id" element={<ProductOverview />} />
+        <Route path="/wastereq/:id" element={<WasteReqOverview/>} />
+        <Route path="/product/:id" element={<ProductOverview/>}/>
         <Route path="/contribute/:id" element={<ContributorForm />} />
         <Route path="/profile" element={<ProfilePage/>} />
         <Route path="/satisfiedRequirements" element={<SatisfiedRequirementsPage/>} />
