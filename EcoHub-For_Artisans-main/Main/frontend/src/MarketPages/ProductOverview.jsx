@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, useParams , Link } from 'react-router-dom';
-import { MarketNavBarCart } from '../MarketComponents/MarketNavBarCart';
+import { MarketNavBar } from '../MarketComponents/MarketNavBar';
 
 export const ProductOverview = () => {
   const [innovreq, setInnovreq] = useState(null);
@@ -74,7 +74,7 @@ export const ProductOverview = () => {
 
   return (
     <>
-    <MarketNavBarCart/>
+    <MarketNavBar/>
     <div className="mx-auto max-w-7xl px-4 md:px-8 2xl:px-16 pt-8">
       {/* <div className="flex items-center">
         <ol className="flex w-full items-center overflow-hidden">

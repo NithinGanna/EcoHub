@@ -8,7 +8,6 @@ const Stripe = require("stripe")("sk_test_51OduLoSEuj58CJVxfj0JxednavltZr3C59KJx
 require("dotenv").config();
 const User = require("../models/userModel")
 
-
   // cart logic
   router.post("/addToCart",userMiddleware, async (req, res) => {
     try {

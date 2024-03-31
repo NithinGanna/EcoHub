@@ -21,6 +21,7 @@ import { IntroScreen } from './Pages/IntroScreen';
 import About from './Pages/About';
 import WasteReqOverview from './Pages/WasteReqOverview';
 import { Cart } from './MarketComponents/Cart';
+import  { Checkout } from './MarketComponents/Checkout';
 
 const MainWithLoading = () => {
   const { isLoading } = useLoading();
@@ -45,6 +46,7 @@ const MainWithLoading = () => {
         <Route path="/satisfiedRequirements" element={<SatisfiedRequirementsPage/>} />
         <Route path="/about" element={<About/>} />
         <Route path='/cart' element={<Cart/>} />
+        <Route path='/checkout' element={<Checkout/>} />
       </Routes>
     </>
   );
