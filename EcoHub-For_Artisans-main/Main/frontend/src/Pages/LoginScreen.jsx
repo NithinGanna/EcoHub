@@ -113,7 +113,7 @@ function LoginScreen() {
             type="button"
             onClick={() => handleSignin('artisan')}
           >
-            Login as Artisan
+            Login as Artisan/Contributor
           </button>
           <ToastContainer
             position="top-center"

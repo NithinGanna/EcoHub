@@ -94,11 +94,13 @@ export const ProductOverview = () => {
       <div className="block grid-cols-9 items-start gap-x-10 pb-10 pt-7 lg:grid lg:pb-14 xl:gap-x-14 2xl:pb-20">
         <div className="col-span-6">
           <div className="duration-150 ease-in hover:opacity-90 mr-16">
+            <div className='flex justify-center items-center'>
             <img
               src={innovreq.image}
               alt={innovreq.title}
-              className="w-full object-cover"
+              className="w-auto h-auto max-w-full max-h-96"
             />
+            </div>
           </div>
         </div>
         <div className="col-span-3 pt-8 lg:pt-0 ">
