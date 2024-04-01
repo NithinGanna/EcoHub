@@ -3,12 +3,12 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
+const { instance } = require("../app.js");
 
 const userMiddleware = require("../middlewares/user");
 const User = require("../models/userModel");
 const innovativeProd = require("../models/innovativeProdModel");
 const wasteReq = require("../models/wasteReqModel");
-
 
 router.post("/signup", async(req,res)=>{
     const username = req.body.username;
@@ -214,5 +214,74 @@ router.get('/user', userMiddleware, async (req, res) => {
     }
   });
 
+
+  router.post('/checkout', userMiddleware, async (req, res) => {
+    try {
+        const options = {
+          amount: Number(req.body.amount * 100),
+          currency: "INR",
+        };
+    
+        console.log("instance === ", instance);
+        const order = await instance.orders.create(options);
+        console.log("after instance of the order = ", order);
+    
+        // Perform MongoDB changes
+        const email = req.user.email; // Assuming user email is available in req.user
+        const user = await User.findOne({ email: email });
+    
+        if (!user) {
+          return res.status(404).json({ msg: "User not found" });
+        }
+        try{
+            // console.log("user mama ",user.cart);
+            for (const item in user.cart){
+                // console.log("id ==  ",item._id,"  item= ",item);
+                const prod=await innovativeProd.findOne({title:item.title});
+                console.log(prod+" prod in for loop");
+                prod.quantity=prod.quantity-1;
+                if(prod.quantity<=0){
+                    console.log(prod,"  is stock out of bound ");
+                   await prod.remove();
+                }
+                else{
+                await prod.save();
+                }
+            }
+
+        }
+        catch (error) {
+            console.error('Error updating quantities:', error);
+          }
+        
+        // Concatenate cart with boughtProducts and empty cart
+        user.boughtProducts = user.boughtProducts.concat(user.cart);
+        user.cart = [];
+    
+        // Save changes to the database
+        await user.save();
+    
+        // console.log("user in database -- ", user);
+    
+        res.status(200).json({
+          success: true,
+          order,
+        });
+      } catch (err) {
+        console.error(err);
+        res.status(500).json({ msg: "Server Error" });
+      }
+    });
+    
+    router.post('/paymentverification', userMiddleware, async (req, res) => {
+      // Redirect the user to the customer profile page
+      res.redirect("http://localhost:5173/customer-profile");
+    });
+    
+    // module.exports = { checkout, paymentVerification };
+    
+// router.route("/checkout").post( userMiddleware, checkout);
+
+// router.route("/paymentverification").post( userMiddleware, paymentVerification);
 
 module.exports = router;

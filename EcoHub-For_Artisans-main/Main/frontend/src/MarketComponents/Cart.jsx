@@ -48,11 +48,47 @@ export function Cart() {
       console.error("Error removing item from cart:", error.response ? error.response.data.msg : error.message);
     }
   };
+  const checkoutHandler = async (amount) => {
+  
 
 
-  const handleCheckout = () => {
-    navigate('/checkout');
-  };
+    const { data: { key } } = await axios.get("http://www.localhost:5001/api/getkey")
+    console.log("key of api -- ",key);
+
+    const { data: { order } } = await axios.post("http://localhost:5001/api/checkout", {
+        amount:totalPrice
+    },{ withCredentials: true });
+    console.log("order --  ",order);
+
+    const options = {
+        key,
+        amount: order.amount,
+        currency: "INR",
+        name: "6 Pack Programmer",
+        description: "Tutorial of RazorPay",
+        image: "EcoHub\\EcoHub-For_Artisans-main\\Main\\frontend\\src\\assets\\avatar.jpg",
+        order_id: order.id,
+        callback_url: "http://localhost:5001/api/paymentverification",
+        prefill: {
+            name: "Gaurav Kumar",
+            email: "gaurav.kumar@example.com",
+            contact: "9999999999"
+        },
+        notes: {
+            "address": "Razorpay Corporate Office"
+        },
+        theme: {
+            "color": "#121212"
+        }
+    };
+    const razor = new window.Razorpay(options);
+    razor.open();
+}
+
+
+  // const handleCheckout = () => {
+  //   navigate('/checkout');
+  // };
 
   return (
     <>
@@ -97,7 +133,7 @@ export function Cart() {
                 <h4 className="text-base font-medium text-gray-900">Total Amount</h4>
                 <p className="text-base font-medium text-gray-900">₹{totalPrice}</p>
               </div>
-              <button onClick={handleCheckout} className="mt-6 w-full bg-green-600 border border-transparent rounded-md py-2 px-4 text-sm font-medium text-white hover:bg-green-700">
+              <button amount={totalPrice} onClick={checkoutHandler} className="mt-6 w-full bg-green-600 border border-transparent rounded-md py-2 px-4 text-sm font-medium text-white hover:bg-green-700">
                 Proceed to Checkout
               </button>
             </div>
