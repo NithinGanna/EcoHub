@@ -163,7 +163,7 @@ router.put("/contribute/:id", userMiddleware,async (req, res) => {
 router.get("/satisfiedRequirement", userMiddleware,async (req, res) => {
   const email=req.user.email;
   const personId = req.user.id; // Assuming you have user authentication and user id is accessible via req.user.id
-  const requirement = await wasteReq.find({ quantity: 0, email: { $ne: email } });
+  const requirement = await wasteReq.find({ quantity: 0, uploaderEmail: { $eq: email } });
   return res.json(requirement);
 });
 
