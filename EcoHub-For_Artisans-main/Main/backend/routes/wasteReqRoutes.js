@@ -3,6 +3,8 @@ const router = express.Router();
 const cloudinary = require("../utils/cloudinary");
 
 const wasteReq = require("../models/wasteReqModel");
+const availableWasteReq = require("../models/wasteReqModel");
+
 const User = require("../models/userModel");
 const userMiddleware = require("../middlewares/user");
 
@@ -166,6 +168,7 @@ router.get("/satisfiedRequirement", userMiddleware,async (req, res) => {
   const requirement = await wasteReq.find({ quantity: 0, uploaderEmail: { $eq: email } });
   return res.json(requirement);
 });
+
 
 
 module.exports = router;

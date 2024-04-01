@@ -24,6 +24,9 @@ import { Cart } from './MarketComponents/Cart';
 import  { Checkout } from './MarketComponents/Checkout';
 import { Success } from './MarketComponents/Success';
 import { Failed } from './MarketComponents/Failed';
+import  AvailableReqForm  from './Pages/AvailableRequirementForm';
+import MarketWaste from './MarketPages/MarketWaste';
+import MarketWasteOverview from './MarketPages/MarketWasteOverview';
 
 const MainWithLoading = () => {
   const { isLoading } = useLoading();
@@ -40,8 +43,10 @@ const MainWithLoading = () => {
         <Route path="/customer-dashboard" element={<MarketHomePage />} />
         <Route path="/iproductform" element={<InnovativeProductForm />} />
         <Route path="/wreqform" element={<WasteReqForm />} />
+        <Route path='/availablereqform' element={<AvailableReqForm/>} />
         <Route path="/wastereq/:id" element={<WasteReqOverview/>} />
         <Route path="/product/:id" element={<ProductOverview/>}/>
+        <Route path="/marketWaste/:id" element={<MarketWasteOverview/>}/>
         <Route path="/contribute/:id" element={<ContributorForm />} />
         <Route path="/profile" element={<ProfilePage/>} />
         <Route path="/customer-profile" element={<MarketProfilePage/>} />
@@ -51,6 +56,7 @@ const MainWithLoading = () => {
         <Route path='/checkout' element={<Checkout/>} />
         <Route path='/success' element={<Success/>} />
         <Route path='/fail' element={<Failed/>} />
+        <Route path='/market-waste' element={<MarketWaste/>} />
       </Routes>
     </>
   );

@@ -5,8 +5,12 @@ import { useState } from 'react';
 
 const menuItems = [
   {
-    name: 'Home',
+    name: 'Innovative',
     href: '/customer-dashboard',
+  },
+  {
+    name: 'Waste',
+    href: '/market-waste',
   },
 ];
 

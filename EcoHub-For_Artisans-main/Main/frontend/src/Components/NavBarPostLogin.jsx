@@ -19,6 +19,10 @@ const menuItems = [
     href: '/wreqform',
   },
   {
+    name: 'Upload Available Waste',
+    href: '/availablereqform',
+  },
+  {
     name: 'Satisfied Requirements',
     href: '/satisfiedRequirements'
   }
@@ -35,7 +39,7 @@ export function NavBarPostLogin() {
       <div className="mx-auto flex max-w-8xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
         <div className="inline-flex items-center space-x-2">
         <Link to ="/artisan-dashboard">
-        <img src={logo} alt="Logo" className="h-14" />
+          <img src={logo} alt="Logo" className="h-14" />
         </Link>
         </div>
         <div className="hidden lg:block">
