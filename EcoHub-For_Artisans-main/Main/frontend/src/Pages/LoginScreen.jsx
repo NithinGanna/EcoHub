@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { NavBarPreLogin } from '../Components/NavBarPreLogin';
 import backgroundImage from '../assets/background.jpg'; // Import your background image here
 import logo from '../assets/logomain.png';
+import pic from '../assets/ecohub2.avif';
 
 function LoginScreen() {
   const [email, setEmail] = useState('');
@@ -70,7 +71,7 @@ function LoginScreen() {
       <NavBarPreLogin />
       <div
         className="flex flex-row items-center justify-center min-h-screen bg-cover"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
+        style={{ backgroundImage: `url(${pic})` }}
       >
         <form className="p-6 bg-neutral-100 rounded-3xl shadow-xl w-96 mb-24">
           <img src={logo} alt="Logo" className="mx-auto h-24" />
