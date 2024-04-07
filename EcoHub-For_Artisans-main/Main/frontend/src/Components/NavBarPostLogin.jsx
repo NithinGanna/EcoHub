@@ -4,6 +4,8 @@ import React from 'react'
 import { Menu, X, ChevronRight } from 'lucide-react'
 import logo from '../assets/logomain.png'
 import {Link} from 'react-router-dom'
+import { useEffect,useState } from 'react'
+import axios from 'axios'
 
 const menuItems = [
   {
@@ -33,6 +35,23 @@ export function NavBarPostLogin() {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
   }
+
+  const [user,setUser] = useState(null);
+  const [error,setError] = useState('');
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+        try {
+            const response = await axios.get('http://localhost:5001/profile', { withCredentials: true });
+            setUser(response.data);
+        } catch (err) {
+            setError('Error fetching user data');
+            console.error(err);
+        }
+    };
+
+    fetchUserData();
+}, []);
 
   return (
     <div className="relative w-full bg-white">
@@ -108,10 +127,16 @@ export function NavBarPostLogin() {
                       </a>
                     ))}
                   </nav>
-                  <span className="flex flex-col">
-                    <span className="text-sm font-medium text-gray-900">Dan Abromov</span>
-                    <span className="text-sm font-medium text-gray-500">@dan_abromov</span>
+                  <Link to='/profile'>
+                  <span className="flex flex-row ml-3 mt-3">
+                    <span className="text-md font-medium text-gray-900">
+                      {user.username}
+                    </span>
+                    <span>
+                          <ChevronRight className="ml-3" />
+                    </span>
                   </span>
+                  </Link>
                 </div>
               </div>
             </div>
