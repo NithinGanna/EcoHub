@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Menu, X, ShoppingCart,ChevronRight } from 'lucide-react'; // Replace ShoppingCart with the actual cart icon if different
 import logo from '../assets/logomain.png';
 import { Link } from 'react-router-dom';
@@ -12,7 +13,7 @@ const menuItems = [
     name: 'Waste',
     href: '/market-waste',
   },
-];
+];               
 
 // export function MarketNavBar() {
   export function MarketNavBar({ setSearchQuery }) {
@@ -48,7 +49,7 @@ const menuItems = [
         </div>
         <div className="flex grow justify-end">
       <input
-        className="flex h-10 w-[250px] rounded-md bg-gray-100 px-3 py-2 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 mr-6"
+        className="flex h-10 w-[200px] rounded-md bg-gray-100 px-3 py-2 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 mr-4"
         type="text"
         placeholder="Search"
         onChange={handleSearchInputChange}
@@ -69,10 +70,9 @@ const menuItems = [
         <Link to='/cart'>
         <button
       
-          className="ml-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-[#617a4f] hover:bg-[#617a4f] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+          className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-[#617a4f] hover:bg-[#617a4f] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
         >
-          <ShoppingCart className="mr-2 -ml-1 h-5 w-5" aria-hidden="true" />
-          Cart
+          <ShoppingCart className="-ml-1 h-5 w-5" aria-hidden="true" />
         </button>
         </Link>
         <div className="ml-2 lg:hidden">
