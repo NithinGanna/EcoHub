@@ -21,9 +21,6 @@ import { IntroScreen } from './Pages/IntroScreen';
 import About from './Pages/About';
 import WasteReqOverview from './Pages/WasteReqOverview';
 import { Cart } from './MarketComponents/Cart';
-import  { Checkout } from './MarketComponents/Checkout';
-import { Success } from './MarketComponents/Success';
-import { Failed } from './MarketComponents/Failed';
 import  AvailableReqForm  from './Pages/AvailableRequirementForm';
 import MarketWaste from './MarketPages/MarketWaste';
 import MarketWasteOverview from './MarketPages/MarketWasteOverview';
@@ -53,9 +50,6 @@ const MainWithLoading = () => {
         <Route path="/satisfiedRequirements" element={<SatisfiedRequirementsPage/>} />
         <Route path="/about" element={<About/>} />
         <Route path='/cart' element={<Cart/>} />
-        <Route path='/checkout' element={<Checkout/>} />
-        <Route path='/success' element={<Success/>} />
-        <Route path='/fail' element={<Failed/>} />
         <Route path='/market-waste' element={<MarketWaste/>} />
       </Routes>
     </>
