@@ -48,16 +48,16 @@ function WasteReqOverview() {
         </ol>
       </div>
       <div className="block grid-cols-9 items-start gap-x-10 pb-10 pt-7 lg:grid lg:pb-14 xl:gap-x-14 2xl:pb-20">
-  <div className="col-span-6">
-    <div className="duration-150 ease-in hover:opacity-90 mr-16">
-      <img
-        src={wasteReq.image}
-        alt={wasteReq.title}
-        className="w-full object-cover"
-      />
-    </div>
-  </div>
-  <div className="col-span-3 pt-8 lg:pt-0 ">
+        <div className="col-span-6 flex justify-center items-center">
+          <div className="duration-150 ease-in hover:opacity-90">
+            <img
+              src={wasteReq.image}
+              alt={wasteReq.title}
+              className="max-w-lg h-auto"
+            />
+          </div>
+        </div>
+        <div className="col-span-3 pt-8 lg:pt-0">
           <div className="mb-7 border-b border-gray-300 pb-7">
             <h2 className="text-heading mb-3.5 text-lg font-bold md:text-xl lg:text-2xl 2xl:text-3xl">
               {wasteReq.title}
@@ -78,7 +78,7 @@ function WasteReqOverview() {
               <span className="ml-2">{wasteReq.quantity}</span>
             </div>
           </div>
-          <div className="space-s-1 3xl:pr-48 flex items-center gap-2 border-b border-gray-300  md:pr-32 lg:pr-12 2xl:pr-32">
+          <div className="flex items-center gap-2 border-b border-gray-300 pb-2">
             <button
               type="button"
               className="h-11 w-full rounded-md bg-[#617a4f] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
