@@ -8,10 +8,10 @@ import { NavBarPostLogin } from '../Components/NavBarPostLogin';
 const AvailableReqForm = () => {
   const { setIsLoading } = useLoading();
   const [uploadedImage, setUploadedImage] = useState(null);
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [price, setPrice] = useState("");
-  const [quantity, setQuantity] = useState("");
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
+  const [price, setPrice] = useState('');
+  const [quantity, setQuantity] = useState('');
   const navigate = useNavigate();
 
   const handleImageChange = (e) => {
@@ -20,61 +20,61 @@ const AvailableReqForm = () => {
   };
 
   const transformFile = (file) => {
-    const reader = new FileReader()
+    const reader = new FileReader();
     if (file) {
-      reader.readAsDataURL(file)
+      reader.readAsDataURL(file);
       reader.onloadend = () => {
         setUploadedImage(reader.result);
-      }
+      };
     } else {
-      setUploadedImage("");
+      setUploadedImage('');
     }
-  }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:5001/uploadAvailableReqFromCommonMan", {
+      const response = await axios.post('http://localhost:5001/uploadAvailableReqFromCommonMan', {
         image: uploadedImage,
         title,
         description,
         price,
-        quantity
+        quantity,
       }, { withCredentials: true });
 
-      if (response.data.msg === "Waste available uploaded successfully") {
+      if (response.data.msg === 'Waste available uploaded successfully') {
         toast.success(response.data.msg, {
-          position: "top-center",
+          position: 'top-center',
           autoClose: 3000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
-          theme: "light",
-          transition: Slide
+          theme: 'light',
+          transition: Slide,
         });
         await new Promise((resolve) => setTimeout(resolve, 2000));
         navigate('/artisan-dashboard');
         setUploadedImage(null);
-        setTitle("");
-        setDescription("");
-        setPrice("");
-        setQuantity("");
+        setTitle('');
+        setDescription('');
+        setPrice('');
+        setQuantity('');
       }
       else {
         toast.warn(response.data.msg, {
-          position: "top-center",
+          position: 'top-center',
           autoClose: 3000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
-          theme: "light",
-          transition: Slide
+          theme: 'light',
+          transition: Slide,
         });
       }
     } catch (err) {
@@ -87,8 +87,8 @@ const AvailableReqForm = () => {
   return (
     <>
       <NavBarPostLogin />
-      <div className="flex justify-center items-center min-h-screen bg-[url(src/assets/low-poly-grid-haikei.svg)]">
-        <div className="flex flex-row bg-white p-6 rounded-lg shadow-lg" style={{ maxWidth: '1600px' }}>
+      <div className="bg-cover bg-center min-h-screen" style={{ backgroundImage: 'url("/path/to/background/image.jpg")' }}>
+        <div className="flex justify-center items-center bg-white bg-opacity-80 p-6 rounded-lg shadow-lg" style={{ maxWidth: '1600px' }}>
           {uploadedImage && (
             <div className="flex-none w-1/2 pr-4">
               <img
@@ -105,18 +105,19 @@ const AvailableReqForm = () => {
               <input
                 type="file"
                 onChange={handleImageChange}
-                accept="image/"
+                accept="image/*"
                 className="block w-full text-sm text-gray-500
                          file:mr-4 file:py-2 file:px-4
                          file:rounded-full file:border-0
                          file:text-sm file:font-semibold
                          file:bg-[#617a4f] file:text-white
                          hover:file:bg-[#617a4f]"
+                required
               />
 
               {/* Form fields */}
               <div className="space-y-4 mt-4">
-                {/* Other form inputs (title, description, price) go here */}
+                {/* Title Input */}
                 <div>
                   <label htmlFor="title" className="block text-sm font-medium text-gray-700">Title</label>
                   <input
@@ -127,7 +128,7 @@ const AvailableReqForm = () => {
                     className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     placeholder="Enter title"
                     value={title}
-                    onChange={(e) => { setTitle(e.target.value) }}
+                    onChange={(e) => { setTitle(e.target.value); }}
                   />
                 </div>
 
@@ -138,10 +139,11 @@ const AvailableReqForm = () => {
                     id="description"
                     name="description"
                     rows="4"
+                    required
                     className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     placeholder="Enter description"
                     value={description}
-                    onChange={(e) => { setDescription(e.target.value) }}
+                    onChange={(e) => { setDescription(e.target.value); }}
                   />
                 </div>
 
@@ -156,7 +158,7 @@ const AvailableReqForm = () => {
                     className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     placeholder="Enter price"
                     value={price}
-                    onChange={(e) => { setPrice(e.target.value) }}
+                    onChange={(e) => { setPrice(e.target.value); }}
                   />
                 </div>
 
@@ -171,7 +173,7 @@ const AvailableReqForm = () => {
                     className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     placeholder="Enter Quantity"
                     value={quantity}
-                    onChange={(e) => { setQuantity(e.target.value) }}
+                    onChange={(e) => { setQuantity(e.target.value); }}
                   />
                 </div>
               </div>
