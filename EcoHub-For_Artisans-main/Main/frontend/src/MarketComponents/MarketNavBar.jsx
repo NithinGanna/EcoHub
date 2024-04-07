@@ -30,7 +30,7 @@ export function MarketNavBar({ setSearchQuery }) {
       <div className="mx-auto flex justify-between items-center max-w-7xl px-4 py-2 lg:py-4 lg:px-8 xl:px-10">
         <div className="flex items-center space-x-4">
           <Link to="/customer-dashboard">
-            <img src={logo} alt="Logo" className="h-16" />
+            <img src={logo} alt="Logo" className="h-16 lg:h-20" />
           </Link>
           <div className="hidden lg:block">
             <ul className="flex space-x-8">
@@ -48,12 +48,14 @@ export function MarketNavBar({ setSearchQuery }) {
           </div>
         </div>
         <div className="flex items-center">
-          <input
-            className="hidden lg:block flex-shrink h-10 w-64 px-3 py-2 rounded-md bg-gray-100 text-sm placeholder-gray-600 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1"
-            type="text"
-            placeholder="Search"
-            onChange={handleSearchInputChange}
-          />
+          <div className="lg:flex-shrink lg:w-64">
+            <input
+              className="lg:w-full h-10 px-3 py-2 rounded-md bg-gray-100 text-sm placeholder-gray-600 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1"
+              type="text"
+              placeholder="Search"
+              onChange={handleSearchInputChange}
+            />
+          </div>
           <Link to='/cart' className='pl-5'>
             <ShoppingCart className="h-8 w-8 mr-4 text-gray-800 hover:text-gray-900" />
           </Link>
@@ -71,7 +73,7 @@ export function MarketNavBar({ setSearchQuery }) {
           <div className="max-w-7xl mx-auto px-4 py-6">
             <div className="flex justify-between items-center mb-8">
               <Link to="/homepage">
-                <img src={logo} alt="Logo" className="h-12" />
+                <img src={logo} alt="Logo" className="h-12 lg:h-16" />
               </Link>
               <button
                 type="button"
