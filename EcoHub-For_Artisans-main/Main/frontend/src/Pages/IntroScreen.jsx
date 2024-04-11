@@ -26,10 +26,10 @@ export function IntroScreen() {
               <defs>
                 <linearGradient
                   id="45de2b6b-92d5-4d68-a6a0-9b9b2abad533"
-                  x1="1155.49"
-                  x2="-78.208"
-                  y1=".177"
-                  y2="474.645"
+                  x1="1200.49"
+                  x2="-90.208"
+                  y1="1.177"
+                  y2="500.645"
                   gradientUnits="userSpaceOnUse"
                 >
                   <stop stopColor="#82ff80" />
@@ -43,7 +43,7 @@ export function IntroScreen() {
               Transforming discarded items into treasures.
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Eco Hub crafts beauty from what others discard, creating a greener, brighter tomorrow.
+              Up Cycle crafts beauty from what others discard, creating a greener, brighter tomorrow.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-2">
               <button

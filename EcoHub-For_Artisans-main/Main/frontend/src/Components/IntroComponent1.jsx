@@ -79,7 +79,7 @@ export function IntroComp1() {
           width: '100%',
           height: 7,
           transformOrigin: '0% 0%',
-          backgroundColor: '#617a4f',
+          backgroundColor: 'white',
           zIndex: '9999',
         }}
         className="hidden md:block fixed inset-y-0 right-0 w-4 bg-gray-700">    
