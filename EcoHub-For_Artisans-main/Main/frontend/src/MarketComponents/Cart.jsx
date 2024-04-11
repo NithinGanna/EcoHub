@@ -106,8 +106,8 @@ export function Cart() {
                     {item.title}
                   </h3>
                   <button onClick={() => handleRemove(index)} className="text-red-600 hover:text-red-900">
-                    Remove
-                  </button>
+                      <Trash className="w-4 h-4" />
+                    </button>
                 </div>
                 <p className="mt-1 text-sm text-gray-500">Dimensions: {item.dimensions}</p>
                 <div className="flex items-end justify-between">

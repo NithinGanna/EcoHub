@@ -2,8 +2,9 @@ import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useLoading } from '../Components/LoadingContext';
-import { Slide, ToastContainer,toast } from 'react-toastify';
-import "react-toastify/dist/ReactToastify.css"
+import { Slide, ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function ContributorForm() {
   const { setIsLoading } = useLoading();
   const { id } = useParams(); // Retrieve the id parameter
@@ -25,21 +26,21 @@ function ContributorForm() {
         quantity,
         address,
       };
-      const response = await axios.put(`http://localhost:5001/contribute/${id}`, payload, {withCredentials: true});
+      const response = await axios.put(`http://localhost:5001/contribute/${id}`, payload, { withCredentials: true });
       toast.success(response.data.msg, {
-        position: "top-center",
+        position: 'top-center',
         autoClose: 3000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        theme: "light",
+        theme: 'light',
         transition: Slide,
-        });
-        await new Promise((resolve) => setTimeout(resolve, 2000));
-        navigate('/artisan-dashboard');
-      
+      });
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+      navigate('/artisan-dashboard');
+
       // Clear the form fields
       setFullName('');
       setEmail('');
@@ -49,29 +50,31 @@ function ContributorForm() {
     } catch (error) {
       console.error('Error contributing:', error);
       toast.error('An error occurred while submitting the form.', {
-        position: "top-center",
+        position: 'top-center',
         autoClose: 3000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        theme: "light",
+        theme: 'light',
         transition: Slide,
-        });
+      });
     } finally {
-    setIsLoading(false);
+      setIsLoading(false);
     }
   };
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-[url(src/assets/low-poly-grid-haikei.svg)] p-4">
       <div className="w-full max-w-md bg-white rounded-lg shadow-md p-6">
-        <h1 className='font-semibold text-center'>Contributor Form</h1>
+        <h1 className="font-semibold text-center text-lg mb-4">Contributor Form</h1>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="fullName" className="text-sm font-semibold text-gray-700">Full Name</label>
-            <input 
+            <label htmlFor="fullName" className="text-sm font-semibold text-gray-700">
+              Full Name
+            </label>
+            <input
               id="fullName"
               type="text"
               value={fullName}
@@ -83,8 +86,10 @@ function ContributorForm() {
           </div>
 
           <div>
-            <label htmlFor="email" className="text-sm font-semibold text-gray-700">Email</label>
-            <input 
+            <label htmlFor="email" className="text-sm font-semibold text-gray-700">
+              Email
+            </label>
+            <input
               id="email"
               type="email"
               value={email}
@@ -96,8 +101,10 @@ function ContributorForm() {
           </div>
 
           <div>
-            <label htmlFor="phone" className="text-sm font-semibold text-gray-700">Phone</label>
-            <input 
+            <label htmlFor="phone" className="text-sm font-semibold text-gray-700">
+              Phone
+            </label>
+            <input
               id="phone"
               type="tel"
               value={phone}
@@ -109,8 +116,10 @@ function ContributorForm() {
           </div>
 
           <div>
-            <label htmlFor="quantity" className="text-sm font-semibold text-gray-700">Quantity</label>
-            <input 
+            <label htmlFor="quantity" className="text-sm font-semibold text-gray-700">
+              Quantity
+            </label>
+            <input
               id="quantity"
               type="number"
               value={quantity}
@@ -122,8 +131,10 @@ function ContributorForm() {
           </div>
 
           <div>
-            <label htmlFor="address" className="text-sm font-semibold text-gray-700">Address</label>
-            <textarea 
+            <label htmlFor="address" className="text-sm font-semibold text-gray-700">
+              Address
+            </label>
+            <textarea
               id="address"
               value={address}
               onChange={(e) => setAddress(e.target.value)}
@@ -135,23 +146,23 @@ function ContributorForm() {
 
           <button
             type="submit"
-            className="w-full p-2 text-sm text-white font-semibold  bg-[#617a4f] rounded-md hover: bg-[#617a4f]"
+            className="w-full p-2 text-sm text-white font-semibold bg-[#617a4f] rounded-md hover:bg-[#617a4f]"
           >
             Contribute
           </button>
           <ToastContainer
-          position="top-center"
-          autoClose={3000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss={false}
-          draggable
-          pauseOnHover
-          theme="light"
-          transition={Slide}
-        />
+            position="top-center"
+            autoClose={3000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss={false}
+            draggable
+            pauseOnHover
+            theme="light"
+            transition={Slide}
+          />
         </form>
       </div>
     </div>
