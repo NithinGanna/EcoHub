@@ -43,7 +43,7 @@ export function IntroScreen() {
               Transforming discarded items into treasures.
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Eco Hub crafts beauty from what others discard, creating a greener, brighter tomorrow.
+              UpCycle crafts beauty from what others discard, creating a greener, brighter tomorrow.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-2">
               <button
