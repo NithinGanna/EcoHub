@@ -6,10 +6,9 @@ import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { ToastContainer, toast, Slide } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { NavBarPreLogin } from '../Components/NavBarPreLogin';
-import backgroundImage from '../assets/background.jpg'; // Import your background image here
+import { NavBarPreLogin } from '../Components/NavBarPreLogin';// Import your background image here
 import logo from '../assets/logomain.png';
-import pic from '../assets/ecohub2.avif';
+import ParticleBg from '../Components/ParticleBg';
 
 function LoginScreen() {
   const [email, setEmail] = useState('');
@@ -67,12 +66,11 @@ function LoginScreen() {
   };
 
   return (
-    <>
+    <div>
+      <ParticleBg id="particles"/>
       <NavBarPreLogin />
       <div
-        className="flex flex-row items-center justify-center min-h-screen bg-cover"
-        style={{ backgroundImage: `url(${pic})` }}
-      >
+        className="flex flex-row items-center justify-center min-h-screen bg-cover">
         <form className="p-6 bg-neutral-100 rounded-3xl shadow-xl w-96 mb-24">
           <img src={logo} alt="Logo" className="mx-auto h-24" />
           <h2 className="text-lg font-semibold mb-4 text-black text-center">Login</h2>
@@ -136,7 +134,7 @@ function LoginScreen() {
           </div>
         </form>
       </div>
-    </>
+    </div>
   );
 }
 
