@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+/* eslint-disable react/prop-types */
+import  { useState, useEffect } from 'react';
 import axios from 'axios';
 import Lottie from 'lottie-react';
 import user_avatar from '../assets/user_avatar.json';
