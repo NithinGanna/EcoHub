@@ -103,7 +103,7 @@ const MarketProfilePage = () => {
           >
             <div className="p-2">
               Logout
-              <FontAwesomeIcon icon={faSignOutAlt} size="lg" />
+              <FontAwesomeIcon icon={faSignOutAlt} size="lg ml-2" />
             </div>
           </button>
         </div>

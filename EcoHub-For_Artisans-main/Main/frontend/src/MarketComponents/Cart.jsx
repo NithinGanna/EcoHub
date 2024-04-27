@@ -133,7 +133,7 @@ export function Cart() {
                 <h4 className="text-base font-medium text-gray-900">Total Amount</h4>
                 <p className="text-base font-medium text-gray-900">₹{totalPrice}</p>
               </div>
-              <button amount={totalPrice} onClick={checkoutHandler} className="mt-6 w-full bg-green-600 border border-transparent rounded-md py-2 px-4 text-sm font-medium text-white hover:bg-green-700">
+              <button amount={totalPrice} onClick={checkoutHandler} className="mt-6 w-full bg-[#617a4f] border border-transparent rounded-md py-2 px-4 text-sm font-medium text-white hover:bg-[#617a4f]">
                 Proceed to Checkout
               </button>
             </div>

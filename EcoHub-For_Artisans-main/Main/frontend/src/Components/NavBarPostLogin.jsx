@@ -72,7 +72,7 @@ export function NavBarPostLogin() {
               <li key={item.name}>
                 <Link
                   to={item.href}
-                  className={`inline-flex items-center text-sm font-semibold ${location.pathname === item.href ? 'text-blue-500' : 'text-gray-800'} hover:text-green-900`}
+                  className={`inline-flex items-center text-sm font-semibold ${location.pathname === item.href ? 'text-blue-500' : 'text-gray-800'} hover:text-blue-500`}
                 >
                   {item.name}
                 </Link>
