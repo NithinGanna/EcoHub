@@ -68,7 +68,7 @@ const ProfilePage = () => {
                     >
                         <div className='p-2'>
                             Logout
-                            <FontAwesomeIcon icon={faSignOutAlt} size="lg" />
+                            <FontAwesomeIcon icon={faSignOutAlt} size="lg" className='ml-2' />
                         </div>
                     </button>
                 </div>

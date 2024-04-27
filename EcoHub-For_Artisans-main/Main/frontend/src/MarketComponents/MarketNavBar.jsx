@@ -29,8 +29,8 @@ export function MarketNavBar({ setSearchQuery }) {
     <div className="relative w-full bg-white">
       <div className="mx-auto flex justify-between items-center max-w-7xl px-4 py-2 lg:py-4 lg:px-8 xl:px-10">
         <div className="flex items-center space-x-4">
-          <Link to="/customer-dashboard">
-            <img src={logo} alt="Logo" className="h-16 lg:h-20" />
+          <Link to="/customer-dashboard" className='lg:-ml-24 lg:mr-8'>
+            <img src={logo} alt="Logo" className="h-12 lg:h-16 md:h-4" />
           </Link>
           <div className="hidden lg:block">
             <ul className="flex space-x-8">
@@ -59,8 +59,8 @@ export function MarketNavBar({ setSearchQuery }) {
           <Link to='/cart' className='pl-5'>
             <ShoppingCart className="h-8 w-8 mr-4 text-gray-800 hover:text-gray-900" />
           </Link>
-          <Link to='/customer-profile'>
-            <img src="src/assets/avatar.jpg" alt="Profile" className="h-12 w-12 rounded-full mr-4" />
+          <Link to='/customer-profile' className='lg:-mr-28'>
+            <img src="src/assets/avatar.jpg" alt="Profile" className="h-12 w-12 rounded-full mr-4 " />
           </Link>
           <Menu
             onClick={toggleMenu}

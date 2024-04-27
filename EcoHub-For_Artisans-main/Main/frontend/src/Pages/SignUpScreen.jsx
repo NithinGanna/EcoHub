@@ -9,6 +9,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Slide, ToastContainer,toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css"
 import { NavBarPreLogin } from '../Components/NavBarPreLogin';
+import ParticleBg from '../Components/ParticleBg';
 
 function SignupScreen() {
   const [username, setUsername] = useState('');
@@ -73,8 +74,9 @@ function SignupScreen() {
 
   return (
     <>
+    <ParticleBg/>
     <NavBarPreLogin/>
-    <div className="flex flex-row items-center justify-center min-h-screen bg-[url('src/assets/blob-scene-haikei.svg')]">
+    <div className="flex flex-row items-center justify-center min-h-screen">
       <form  className="p-6 bg-neutral-100 rounded-3xl shadow-2xl w-96">
       <img src={logo} alt="Logo" className="mx-auto h-24" />
         <h2 className="text-lg font-semibold mb-4 text-black text-center font-gilroy">Artisan Sign Up</h2>
